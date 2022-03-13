@@ -8,8 +8,7 @@ function App() {
 
   const signInWithGmail = () => {
     const provider = new GoogleAuthProvider();
-    const auth = authentication;
-    signInWithPopup(auth, provider)
+    signInWithPopup(authentication, provider)
       .then((result) => {
         setUser(result.user);
       })
@@ -21,8 +20,8 @@ function App() {
   const signOutGmail = () => {
     signOut(authentication)
       .then(() => {
-        const user = document.querySelector(".myclass");
-        user.parentNode.removeChild(user);
+        const userclass = document.querySelector(".myclass");
+        userclass.parentNode.removeChild(userclass);
         console.log("Signed out");
       })
       .catch((error) => {
